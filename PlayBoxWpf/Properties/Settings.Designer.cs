@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DotnetUserInterfacePractice.Properties
+namespace PlayBoxWpf.Properties
 {
 
 

@@ -1,0 +1,23 @@
+﻿<Window x:Class="PlayBoxWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlayBoxWpf"
+        xmlns:sys1="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        x:Name="MainWin"
+        Title="{Binding Content.Title, ElementName=MainFrame }"
+        Height="450" Width="800" 
+        Background="#FF328536" Foreground="Black">
+
+    <Grid>
+        <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top">
+            <Button Content="Page 1" MinWidth="100" Click="Button_Click"/>
+            <Button Content="Page 2" MinWidth="100" Margin="10,0,0,0" Click="Button_Click2"/>
+            <Button Content="Page 3" MinWidth="100" Margin="10,0,0,0" Click="Button_Click3"/>
+
+        </StackPanel>
+        <Frame x:Name="MainFrame" Margin="0,35,0,0" NavigationUIVisibility="Automatic"/>
+    </Grid>
+</Window>

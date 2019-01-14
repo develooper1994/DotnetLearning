@@ -1,0 +1,82 @@
+﻿<Page x:Class="PlayBoxWpf.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PlayBoxWpf"
+      xmlns:sys1="clr-namespace:System;assembly=mscorlib"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="General Xaml">
+
+    <Page.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontFamily" Value="24"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Grid.Column" Value="1"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "Auto" />
+            <RowDefinition Height = "Auto" />
+            <RowDefinition Height = "Auto" />
+            <RowDefinition Height = "*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width = "*" />
+            <ColumnDefinition Width = "2*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text = "First Name: "/>
+        <TextBox Name = "FirstName" />
+        <TextBlock Text = "Last Name: " Grid.Row = "1" />
+        <TextBox Name = "LastName" Grid.Row = "1" />
+        <TextBlock Text = "Email: " Grid.Row = "2" />
+        <TextBox Name = "Email" Grid.Row = "2"/>
+
+        <Calendar x:Name="clndr" Grid.Row="3" Grid.Column="0"
+            HorizontalAlignment="Center" VerticalAlignment="Top"
+            Margin="20" SelectionMode="MultipleRange"
+            IsTodayHighlighted="False" 
+            DisplayDate="1/1/2018" DisplayDateEnd="1/31/2019"
+            xmlns:sys="clr-namespace:System;assembly=System"
+            SelectedDatesChanged="Calendar_SelectedDatesChanged"
+                  >
+            <Calendar.BlackoutDates>
+                <CalendarDateRange Start="1/2/2018" End="1/3/2018"/>
+                <CalendarDateRange Start="1/9/2018" End="1/11/2018"/>
+            </Calendar.BlackoutDates>
+
+            <Calendar.SelectedDates>
+                <sys1:DateTime>1/5/2018</sys1:DateTime>
+                <sys1:DateTime>3/5/2018</sys1:DateTime>
+            </Calendar.SelectedDates>
+
+        </Calendar>
+        <WrapPanel Orientation="Vertical" Margin="10"
+            Grid.Row="3" Grid.Column="1"
+                >
+            <CheckBox x:Name="cb1" 
+                Content="2 state checkbox"
+                Unchecked="Cb1_Unchecked"
+                Checked="Cb1_Checked" Margin="0,10" Width="488"/>
+            <TextBlock x:Name="tblk1" Margin="0,10" Width="488"/>
+            <CheckBox x:Name="cb2" 
+                Content="3 state checkbox"
+                IsThreeState="True" Indeterminate="Cb2_Indeterminate"
+                Checked="Cb2_Checked" Unchecked="Cb2_Unchecked" Margin="0,10" Width="488"/>
+            <TextBlock x:Name="tblk2" Margin="0,10" Width="488"/>
+        </WrapPanel>
+    </Grid>
+</Page>
