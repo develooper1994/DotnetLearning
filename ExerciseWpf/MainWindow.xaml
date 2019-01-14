@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExerciseWpf"
         mc:Ignorable="d"
-        Title="Exercise Wpf" Height="800" Width="400">
+        Title="Exercise Wpf" Height="700" Width="400">
 
     <Border Padding="10">
         <StackPanel>
@@ -17,13 +17,13 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button Content="Apply" Margin="10 0 10 0" Grid.Column="0"/>
-                <Button Content="Reset" Margin="10 0 10 0" Grid.Column="1"/>
-                <Button Content="Cancel" Margin="10 0 10 0" Grid.Column="2"/>
+                <Button Content="Apply" Margin="10 0" Grid.Column="0"/>
+                <Button Content="Reset" Margin="10 0" Grid.Column="1"/>
+                <Button Content="Refresh" Margin="10 0" Grid.Column="2"/>
             </Grid>
 
             <TextBlock Text="Pulse Properties" FontWeight="Bold" 
-                       Margin="10"/>
+                       Margin="10 10 10 0"/>
 
             <StackPanel Margin="10,0" Orientation="Vertical">
                 <TextBlock Text="Description"/>
@@ -54,7 +54,7 @@
 
             <!--Raw Material-->
             <TextBlock Text="Raw Material" FontWeight="Bold" 
-                       Margin="10"/>
+                       Margin="10 10 10 0"/>
 
             <StackPanel Margin="10,0" Orientation="Vertical">
                 <TextBlock Text="Material"/>
@@ -63,7 +63,7 @@
 
             <!--Manufacturing Info-->
             <TextBlock Text="Manufacturing Information" FontWeight="Bold" 
-                       Margin="10"/>
+                       Margin="10 10 10 0"/>
 
             <TextBlock Text="Work Centers" Margin="10 0"/>
             
@@ -89,7 +89,7 @@
                     <CheckBox Content="Saw"/>
                 </StackPanel>
             </Grid>
-            <StackPanel Margin="10 0 10 0" Orientation="Vertical">
+            <StackPanel Margin="10 0" Orientation="Vertical">
                 <TextBlock Text="Lenght"/>
                 <TextBox Padding="2"/>
             </StackPanel>
@@ -101,7 +101,7 @@
             </StackPanel>
             
             <!--Finish-->
-            <StackPanel Margin="10 0 10 0" Orientation="Vertical">
+            <StackPanel Margin="10 0" Orientation="Vertical">
                 <TextBlock Text="Finish"/>
                 <ComboBox SelectedIndex="0" Padding="2">
                     <ComboBoxItem>Painted</ComboBoxItem>
@@ -110,7 +110,7 @@
             </StackPanel>
 
             <!--Purchase Item-->
-            <StackPanel Margin="10 0 10 0" Orientation="Vertical">
+            <StackPanel Margin="10 0" Orientation="Vertical">
                 <TextBlock Text="Purchase Item"/>
                 <ComboBox SelectedIndex="0" Padding="2">
                     <ComboBoxItem>Rubber</ComboBoxItem>
@@ -119,23 +119,23 @@
             </StackPanel>
 
             <!--Supplier Name-->
-            <StackPanel Margin="10 0 10 0" Orientation="Vertical">
+            <StackPanel Margin="10 0" Orientation="Vertical">
                 <TextBlock Text="Supplier Name"/>
                 <TextBox Padding="2"/>
             </StackPanel>
 
             <!--Supplier Code-->
-            <StackPanel Margin="10 0 10 0" Orientation="Vertical">
+            <StackPanel Margin="10 0" Orientation="Vertical">
                 <TextBlock Text="Supplier Code"/>
                 <TextBox Padding="2"/>
             </StackPanel>
 
 
             <TextBlock Text="Additional Informational" FontWeight="Bold" 
-                       Margin="10"/>
+                       Margin="10 10 10 0"/>
 
             <!--Note-->
-            <StackPanel Margin="10 0 10 0" Orientation="Vertical">
+            <StackPanel Margin="10 0" Orientation="Vertical">
                 <TextBlock Text="Note"/>
                 <TextBox Padding="2"/>
             </StackPanel>
