@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExerciseWpf"
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
         Title="Exercise Wpf" Height="700" Width="400">
 
     <Border Padding="10">
@@ -17,9 +18,12 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button Content="Apply" Margin="10 0" Grid.Column="0"/>
-                <Button Content="Reset" Margin="10 0" Grid.Column="1"/>
-                <Button Content="Refresh" Margin="10 0" Grid.Column="2"/>
+                <Button x:Name="ApplyButton" Click="ApplyButton_Click" Content="Apply"
+                        ClickMode="Release" Margin="10 0" Grid.Column="0"/>
+                <Button x:Name="ResetButton" Click="ResetButton_Click" 
+                        ClickMode="Release" Content="Reset" Margin="10 0" Grid.Column="1"/>
+                <Button x:Name="RefreshButton" Click="RefreshButton_Click" Content="Refresh" 
+                        ClickMode="Release" Margin="10 0" Grid.Column="2"/>
             </Grid>
 
             <TextBlock Text="Pulse Properties" FontWeight="Bold" 
@@ -27,7 +31,7 @@
 
             <StackPanel Margin="10,0" Orientation="Vertical">
                 <TextBlock Text="Description"/>
-                <TextBox Padding="2"/>
+                <TextBox x:Name="DescriptionTB" Padding="2"/>
             </StackPanel>
 
             <Grid>
@@ -75,35 +79,39 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0">
-                    <CheckBox Content="Weld"/>
-                    <CheckBox Content="Assembly"/>
-                    <CheckBox Content="Plasma"/>
-                    <CheckBox Content="Laser"/>
-                    <CheckBox Content="Purchase"/>
+                    <CheckBox Checked="CB_Checked" x:Name="WeldCB" Content="Weld"/>
+                    <CheckBox Checked="CB_Checked" x:Name="AssemblyCB" Content="Assembly"/>
+                    <CheckBox Checked="CB_Checked" x:Name="PlasmaCB" Content="Plasma"/>
+                    <CheckBox Checked="CB_Checked" x:Name="LaserCB" Content="Laser"/>
+                    <CheckBox Checked="CB_Checked" x:Name="PurchaseCB" Content="Purchase"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" >
-                    <CheckBox Content="Lathe"/>
-                    <CheckBox Content="Drill"/>
-                    <CheckBox Content="Fold"/>
-                    <CheckBox Content="Roll"/>
-                    <CheckBox Content="Saw"/>
+                    <CheckBox Checked="CB_Checked" x:Name="LatheCB" Content="Lathe"/>
+                    <CheckBox Checked="CB_Checked" x:Name="DrillCB" Content="Drill"/>
+                    <CheckBox Checked="CB_Checked" x:Name="FoldCB" Content="Fold"/>
+                    <CheckBox Checked="CB_Checked" x:Name="RollCB" Content="Roll"/>
+                    <CheckBox Checked="CB_Checked" x:Name="SawCB" Content="Saw"/>
                 </StackPanel>
             </Grid>
+            
+            <!--Lenght-->
             <StackPanel Margin="10 0" Orientation="Vertical">
                 <TextBlock Text="Lenght"/>
-                <TextBox Padding="2"/>
+                <TextBox IsReadOnly="True" x:Name="LenghtTB" 
+                         Padding="2" Background="LightGray"/>
             </StackPanel>
 
             <!--Mass-->
             <StackPanel Margin="10 5 10 0" Orientation="Vertical">
                 <TextBlock Text="Mass"/>
-                <TextBox IsReadOnly="True" Padding="2" Background="LightGray"/>
+                <TextBox x:Name="MassTB" IsReadOnly="True" 
+                         Padding="2" Background="LightGray"/>
             </StackPanel>
             
             <!--Finish-->
             <StackPanel Margin="10 0" Orientation="Vertical">
                 <TextBlock Text="Finish"/>
-                <ComboBox SelectedIndex="0" Padding="2">
+                <ComboBox x:Name="FinishDropDown" SelectionChanged="Finish_SelectionChanged" SelectedIndex="0" Padding="2">
                     <ComboBoxItem>Painted</ComboBoxItem>
                     <ComboBoxItem>Not Painted</ComboBoxItem>
                 </ComboBox>
@@ -121,7 +129,7 @@
             <!--Supplier Name-->
             <StackPanel Margin="10 0" Orientation="Vertical">
                 <TextBlock Text="Supplier Name"/>
-                <TextBox Padding="2"/>
+                <TextBox x:Name="SupplierNameTB" TextChanged="SupplierNameTB_TextChanged" Padding="2"/>
             </StackPanel>
 
             <!--Supplier Code-->
@@ -137,7 +145,7 @@
             <!--Note-->
             <StackPanel Margin="10 0" Orientation="Vertical">
                 <TextBlock Text="Note"/>
-                <TextBox Padding="2"/>
+                <TextBox x:Name="NoteTxt" Padding="2"/>
             </StackPanel>
 
 
