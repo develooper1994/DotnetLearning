@@ -60,7 +60,7 @@ namespace TestHeatMap
                 HeatPoints = points,
                 Opacity = opacity
             };
-            pictureBox2.BackgroundImage = await hmMaker.MakeHeatMap();
+            pictureBox2.BackgroundImage = await hmMaker.MakeHeatMap(); // ***renklendirilmiş asıl heatmap***
             pictureBox1.BackgroundImage = hmMaker.GrayMap;
             
             DisplayInfo();

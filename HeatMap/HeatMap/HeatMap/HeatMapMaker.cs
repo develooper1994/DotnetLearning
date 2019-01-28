@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
-using System.Diagnostics;
+
+using System.Runtime.CompilerServices;
 
 namespace HeatMap
 {
     public class HeatMapMaker
     {
+        /// <summary>
+        /// Main Algorithm
+        /// </summary>
         public int Width { get; set; }
         public int Height { get; set; }
         public int Radius { get; set; }
@@ -20,11 +21,14 @@ namespace HeatMap
         public List<HeatPoint> HeatPoints { get; set; }
         public Bitmap GrayMap { get; private set; }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private Bitmap CreateResult() => new Bitmap(Width, Height, PixelFormat.Format32bppArgb);
+
         public Task<Bitmap> MakeHeatMap()
         {
             return Task.Run(() =>
             {
-                var result = new Bitmap(Width, Height, PixelFormat.Format32bppArgb);
+                Bitmap result = CreateResult();
                 GrayMap = MakeGrayMap().Result;
                 for (int x = 0; x < Width; x++)
                 {
@@ -44,7 +48,7 @@ namespace HeatMap
         {
             return Task.Run(() =>
             {
-                var result = new Bitmap(Width, Height, PixelFormat.Format32bppArgb);
+                Bitmap result = CreateResult();
                 var graphics = Graphics.FromImage(result);
 
                 var grayRamp = ColorUtil.GetGrayRamp();
@@ -68,5 +72,6 @@ namespace HeatMap
                 return result;
             });
         }
+    
     }
 }
